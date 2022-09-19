@@ -28,6 +28,7 @@ def main():
 			spi_items = [ 'Layout No.', 'Pin No.' , 'Pad No.' , 'Area[um2]' , 'Area[%]' , 'X shift' , 'Y shift', 
 				     'No solder' , 'Center X', 'Center Y',             ]
 			df1 = df.loc[:,spi_items]
+			
 			st.write(df1)
 			st.sidebar.write(file_details)
 			# To View Uploaded Image
