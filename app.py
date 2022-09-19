@@ -3,7 +3,7 @@ import cv2
 import streamlit as st
 import numpy as np
 import scipy.stats as sst
-impoet plotly.express as px
+import plotly.express as px
 
 st.set_page_config(page_title="Plot Map Exercise !" ,page_icon="random" ,layout="wide")
 
