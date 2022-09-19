@@ -30,7 +30,7 @@ def main():
 				     'No solder' , 'Center X', 'Center Y']
 			df1 = df.loc[:,spi_items]
 			df1['Layout No.'] = df1['Layout No.'].astype('int32')
-			df1.sort_values('Layout No.', inplace = True )
+			df1.sort_values(['Layout No.', 'Pin No.'], inplace = True )
 
 
 			
