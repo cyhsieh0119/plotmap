@@ -21,7 +21,12 @@ def main():
 		data_file = st.file_uploader(r"Upload *.csv or *.csv.zip", type=["csv","zip"])
 		if data_file is not None:
 			file_details = {"filename":data_file.name, "filetype":data_file.type,
-				 	            "filesize":image_file.size}
+				 	"filesize":image_file.size}
+			df = pd.read_csv(filename, skiprows=10,low_memory=False)
+			spi_items = [ 'Layout No.', 'Pin No.' , 'Pad No.' , 'Area[um2]' , 'Area[%]' , 'X shift' , 'Y shift', 
+				     'No solder' , 'Center X', 'Center Y',             ]
+			df1 = df.loc[:,spi_items]
+			st.write(df1)
 			st.sidebar.write(file_details)
 			# To View Uploaded Image
 			with tab1:
