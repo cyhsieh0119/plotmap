@@ -1,8 +1,6 @@
 from PIL import Image
-import cv2
 import streamlit as st
 import numpy as np
-import scipy.stats as sst
 import plotly.express as px
 
 st.set_page_config(page_title="Plot Map Exercise !" ,page_icon="random" ,layout="wide")
