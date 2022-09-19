@@ -29,11 +29,11 @@ def main():
 			spi_items = ['Layout No.', 'Pin No.' , 'Pad No.' , 'Area[um2]' , 'Area[%]' , 'X shift' , 'Y shift', 
 				     'No solder' , 'Center X', 'Center Y']
 			df1 = df.loc[:,spi_items]
+			df1['Pin No.'] = df1['Pin No.'].astype('int')
 			df1['Layout No.'] = df1['Layout No.'].astype('int32')
 			df1.sort_values(['Layout No.', 'Pin No.'], inplace = True )
 
 
-			
 			st.write(df1)
 			st.sidebar.write(file_details)
 			# To View Uploaded Image
