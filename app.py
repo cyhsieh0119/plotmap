@@ -23,7 +23,7 @@ def main():
 			file_details = {"filename":data_file.name, "filetype":data_file.type,
 				 	"filesize":data_file.size}
 			df = pd.read_csv(data_file, skiprows=10, engine='c',
-					 sep=",", compression="zip",
+					 sep=",", compression="zip", low_memory=False, 
 					 encoding='ISO-8859-1',encoding_errors='ignore')
 			spi_items = [ 'Layout No.', 'Pin No.' , 'Pad No.' , 'Area[um2]' , 'Area[%]' , 'X shift' , 'Y shift', 
 				     'No solder' , 'Center X', 'Center Y',             ]
