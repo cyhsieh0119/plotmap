@@ -25,9 +25,13 @@ def main():
 			df = pd.read_csv(data_file, skiprows=10, engine='c',
 					 sep=",", compression="zip", low_memory=False, 
 					 encoding='ISO-8859-1',encoding_errors='ignore')
-			spi_items = [ 'Layout No.', 'Pin No.' , 'Pad No.' , 'Area[um2]' , 'Area[%]' , 'X shift' , 'Y shift', 
-				     'No solder' , 'Center X', 'Center Y',             ]
-			df1 = df.loc[:,spi_items]
+
+			spi_items = ['Layout No.', 'Pin No.' , 'Pad No.' , 
+                         'Area[um2]' , 'Area[%]' ,
+                         'X shift' , 'Y shift', 
+				'No solder' , 'Center X', 'Center Y']
+			df1 = df.loc[:,spi_items]#
+			
 			
 			st.write(df1)
 			st.sidebar.write(file_details)
