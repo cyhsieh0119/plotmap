@@ -36,7 +36,7 @@ def main():
 				fitem = 'Pin No.'
 				xysize=[450,450]
 					
-				col1, col2, col3, col4, col5  = st.columns([5,1,5,1,5])
+				col1, col2, col3, col4, col5  = st.columns([9,1,9,1,9])
 				with col1:
 					#Acol1, Acol2 = st.columns([3,1])
 					#with Acol1:
