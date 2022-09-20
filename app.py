@@ -15,6 +15,7 @@ def main():
 	st.title("# Plot XY Map for Some Parameter！")
 	menu = ["SPI","DB","AOI"]
 	choice = st.sidebar.selectbox("Menu(Only SPI is OK!)",menu)
+	db_zip_file, data_file = '' .  ''
 
 	if choice == "SPI":
 		if db_zip_file is not None:
