@@ -51,8 +51,9 @@ def main():
 				st.plotly_chart(px.histogram(df1, x=spi_check[1],title=panel_id))
 				st.plotly_chart(px.histogram(df1, x=spi_check[2],title=panel_id))
 				st.plotly_chart(px.histogram(df1, x=spi_check[3],title=panel_id))
-				st.write(df1[spi_check].describe())
-				st.write(df1)				
+				#st.write(df1[spi_check].describe())
+				with st.expander("See detail datas!"):
+					st.write(df1)				
 
 	elif choice == "DB":
 		st.subheader("DB is under constructed! Coming Soon...")
