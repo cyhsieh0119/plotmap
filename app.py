@@ -28,6 +28,7 @@ def main():
 
 			with tab1:
 				panel_id = data_file.name
+				spi_check=['Area[um2]', 'Area[%]',  'X shift', 'Y shift' ]
 				fitem = 'Pin No.'
 				xysize=[600,600]
 				figA = plotSPI(df1, panel_id , spi_check[1], fitem, 3, [50, 150], xysize)
