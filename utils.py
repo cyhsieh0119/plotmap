@@ -4,7 +4,6 @@ import numpy as np
 import streamlit as st
 from zipfile import ZipFile
 
-@st.cache
 def read_db_zip(zip_name):
     """
     Read the multiple csv files from a zip file and concatenate the multi dataframe into one dataframe.
