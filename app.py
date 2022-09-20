@@ -17,6 +17,8 @@ def main():
 	choice = st.sidebar.selectbox("Menu(Only SPI is OK!)",menu)
 
 	if choice == "SPI":
+		if db_zip_file is not None:
+			del db_zip_file
 		st.subheader("Please use *.csv.zip as the input dataset file !")
 		tcol1, tcol2, tcol3 = st.columns([3,1,5])
 		with tcol1:
@@ -82,7 +84,8 @@ def main():
 
 	elif choice == "DB":
 		#if data_file is not None:
-		del data_file if data_file is not None
+		if data_file is not None:
+			del data_file 
 		st.subheader("DB is under constructed! Coming Soon...")
 		#st.subheader("Please use *.csv.zip as the input dataset file !")
 		db_col1, db_col2, db_col3 = st.columns([3,1,5])
