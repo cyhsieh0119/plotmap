@@ -11,6 +11,7 @@ def read_SPI_file(data_file):
     df1['Layout No.'] = df1['Layout No.'].astype('int32')
     df1.sort_values(['Layout No.', 'Pin No.'], inplace = True )
     df1.reset_index(drop=True)
+    del df
     return df1
 
 def read_COB_file(filename):
