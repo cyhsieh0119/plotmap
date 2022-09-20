@@ -2,12 +2,9 @@ import pandas as pd
 import plotly.express as px
 
 def read_SPI_file(filename):
-    df = pd.read_csv(data_file, skiprows=10, engine='c',
-					 sep=",", compression="zip", low_memory=False, 
-					 encoding='ISO-8859-1',encoding_errors='ignore')
+    df = pd.read_csv(data_file, skiprows=10, engine='c', sep=",", compression="zip", low_memory=False, encoding='ISO-8859-1',encoding_errors='ignore')
 
-    spi_items = ['Layout No.', 'Pin No.' , 'Pad No.' , 'Area[um2]' , 'Area[%]' , 'X shift' , 'Y shift', 
-                 'No solder' , 'Center X', 'Center Y']
+    spi_items = ['Layout No.', 'Pin No.' , 'Pad No.' , 'Area[um2]' , 'Area[%]' , 'X shift' , 'Y shift', 'No solder' , 'Center X', 'Center Y']
     df1 = df.loc[:,spi_items]
     df1['Pin No.'] = df1['Pin No.'].astype('int')
     df1['Layout No.'] = df1['Layout No.'].astype('int32')
