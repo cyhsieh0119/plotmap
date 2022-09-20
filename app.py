@@ -43,8 +43,11 @@ def main():
 				st.write(df1[spi_check].describe())
 				st.write(df1)				
 
-	elif choice == "DocumentFiles":
-		st.subheader("DocumentFiles")
+	elif choice == "DB":
+		st.subheader("DB is under constructed! Coming Soon...")
+	
+	elif choice == "AOI":
+		st.subheader("AOI is under constructed! Coming Soon...")
 
 
 if __name__ == '__main__':
