@@ -19,7 +19,7 @@ def main():
 		st.subheader("Please use *.csv.zip as the input dataset file !")
 		data_file = st.file_uploader(r"Upload *.csv or *.csv.zip", type=["zip"])
 		#
-		tab1, tab2 = st.tabs(["Graph", "Detail Data"])
+		tab1, tab2 = st.tabs(["Graph", "Histogram"])
 		if data_file is not None:
 			file_details = {"filename":data_file.name, "filetype":data_file.type,
 				 	"filesize":data_file.size}
