@@ -17,7 +17,7 @@ def main():
 
 	if choice == "SPI":
 		st.subheader("Please use *.csv.zip as the input dataset file !")
-		tcol1, tcol2 = st.columns(2)
+		tcol1, tcol2 = st.columns([2,1,4])
 		with tcol1:
 			data_file = st.file_uploader(r"Upload *.csv or *.csv.zip", type=["zip"])
 		#
