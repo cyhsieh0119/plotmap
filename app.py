@@ -38,18 +38,18 @@ def main():
 					
 				col1, col2, col3 = st.columns(3)
 				with col1:
-					values = st.slider('Select a range of Areas',50.0, 150.0, (70.0, 130.0))
-					minA, maxA = values[0], [1]
+					valueA = st.slider('Select a range of Areas',50.0, 150.0, (70.0, 130.0))
+					minA, maxA = valueA[0], valueA[1]
 					figA = plotSPI(df1, panel_id , spi_check[1], fitem, 3, [minA, maxA], xysize)
 					st.plotly_chart(figA, use_container_width=True)
 				with col2:
-					values = st.slider('Select a range of Areas',-40.0, 40.0, (-25.0, 25.0))
-					minX, maxX = values[0], [1]
+					valueX = st.slider('Select a range of Areas',-40.0, 40.0, (-25.0, 25.0))
+					minX, maxX = valueX[0], valueX[1]
 					figx = plotSPI(df1, panel_id , spi_check[2], fitem, 3, [minX, maxX], xysize)
 					st.plotly_chart(figx, use_container_width=True)
 				with col3:
-					values = st.slider('Select a range of Areas',-40.0, 40.0, (-25.0, 25.0))
-					minY, maxY = values[0], [1]
+					valueY = st.slider('Select a range of Areas',-40.0, 40.0, (-25.0, 25.0))
+					minY, maxY = valueY[0], valueY[1]
 					figy = plotSPI(df1, panel_id , spi_check[3], fitem, 3, [minY, maxY], xysize)
 					st.plotly_chart(figy, use_container_width=True)
 				
