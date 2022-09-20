@@ -4,6 +4,30 @@ import numpy as np
 import streamlit as st
 
 @st.cache
+def read_db_zip(zip_name):
+    """
+    Read the multiple csv files from a zip file and concatenate the multi dataframe into one dataframe.
+    only for db file format has different Panel_ID : error format due to the miss output
+    """
+    zip_file = ZipFile(zip_name)
+    df=pd.DataFrame()
+    for text_file in zip_file.infolist():
+        if text_file.filename.endswith('.csv'):
+            tmp=read_COB_file(zip_file.open(text_file.filename))
+            df=pd.concat([df, tmp])
+#     
+    df.reset_index(inplace = True)
+    df.drop('index',axis=1,inplace=True)
+#
+    for id in df['Panel_ID'].unique():
+        if 'T' in id:
+            id_name=id
+            break
+    df['Panel_ID']=id_name
+    df.drop(['Onload Wafer ID','Time','Column','Row','Device'],axis=1 , inplace=True)
+    return df 
+#
+@st.cache
 def read_SPI_file(data_file):
     df = pd.read_csv(data_file, skiprows=10, engine='c', sep=",", compression="zip", low_memory=False, encoding='ISO-8859-1',encoding_errors='ignore')
 
