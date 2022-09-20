@@ -36,11 +36,11 @@ def main():
 				figy = plotSPI(df1, panel_id , spi_check[3], fitem, 3, [-25, 25], xysize)
 				#col1, col2, col3 = st.columns(3)
 				#with col1:
-				#	st.plotly_chart(figA, use_container_width=False)
+				#	st.plotly_chart(figA, use_container_width=True)
 				#with col2:
-				#	st.plotly_chart(figx, use_container_width=False)
+				#	st.plotly_chart(figx, use_container_width=True)
 				#with col3:
-				#	st.plotly_chart(figy, use_container_width=False)
+				#	st.plotly_chart(figy, use_container_width=True)
 				#
 				st.plotly_chart(figA, use_container_width=False)
 				st.plotly_chart(figx, use_container_width=False)
@@ -48,6 +48,9 @@ def main():
 
 			# To View Uploaded Image
 			with tab2:
+				st.plotly_chart(px.histogram(df1, x=spi_check[1],title=panel_id))
+				st.plotly_chart(px.histogram(df1, x=spi_check[2],title=panel_id))
+				st.plotly_chart(px.histogram(df1, x=spi_check[3],title=panel_id))
 				st.write(df1[spi_check].describe())
 				st.write(df1)				
 
