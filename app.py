@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import numpy as np
+from ./utils import read_SPI_file, plotSPI
 
 st.set_page_config(page_title="Plot Map Exercise !" ,page_icon="random" ,layout="wide")
 
@@ -22,16 +23,17 @@ def main():
 		if data_file is not None:
 			file_details = {"filename":data_file.name, "filetype":data_file.type,
 				 	"filesize":data_file.size}
-			df = pd.read_csv(data_file, skiprows=10, engine='c',
-					 sep=",", compression="zip", low_memory=False, 
-					 encoding='ISO-8859-1',encoding_errors='ignore')
+			df1 = read_SPI_file（data_file)
+			#df = pd.read_csv(data_file, skiprows=10, engine='c',
+			#		 sep=",", compression="zip", low_memory=False, 
+			#		 encoding='ISO-8859-1',encoding_errors='ignore')
 
-			spi_items = ['Layout No.', 'Pin No.' , 'Pad No.' , 'Area[um2]' , 'Area[%]' , 'X shift' , 'Y shift', 
-				     'No solder' , 'Center X', 'Center Y']
-			df1 = df.loc[:,spi_items]
-			df1['Pin No.'] = df1['Pin No.'].astype('int')
-			df1['Layout No.'] = df1['Layout No.'].astype('int32')
-			df1.sort_values(['Layout No.', 'Pin No.'], inplace = True )
+			#spi_items = ['Layout No.', 'Pin No.' , 'Pad No.' , 'Area[um2]' , 'Area[%]' , 'X shift' , 'Y shift', 
+			#	     'No solder' , 'Center X', 'Center Y']
+			#df1 = df.loc[:,spi_items]
+			#df1['Pin No.'] = df1['Pin No.'].astype('int')
+			#df1['Layout No.'] = df1['Layout No.'].astype('int32')
+			#df1.sort_values(['Layout No.', 'Pin No.'], inplace = True )
 
 
 			st.write(df1)
@@ -42,8 +44,6 @@ def main():
 
 	elif choice == "DocumentFiles":
 		st.subheader("DocumentFiles")
-
-
 
 
 if __name__ == '__main__':
