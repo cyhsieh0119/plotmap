@@ -17,13 +17,17 @@ def main():
 
 	if choice == "SPI":
 		st.subheader("Please use *.csv.zip as the input dataset file !")
-		data_file = st.file_uploader(r"Upload *.csv or *.csv.zip", type=["zip"])
-		#
-		tab1, tab2 = st.tabs(["XY Map", "Histogram"])
-		if data_file is not None:
+		tcol1, tcol2 = st.columns(2)
+		with tcol1:
+			data_file = st.file_uploader(r"Upload *.csv or *.csv.zip", type=["zip"])
+		with tcol2:
 			file_details = {"filename":data_file.name, "filetype":data_file.type,
 				 	"filesize":data_file.size}
 			st.sidebar.write(file_details)
+		#
+		tab1, tab2 = st.tabs(["XY Map", "Histogram"])
+		if data_file is not None:
+
 			df1 = read_SPI_file(data_file)
 			spi_check=['Area[um2]', 'Area[%]',  'X shift', 'Y shift' ]
 
