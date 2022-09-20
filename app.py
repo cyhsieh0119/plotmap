@@ -10,7 +10,6 @@ st.set_page_config(page_title="Plot Map Exercise !" ,page_icon="random" ,layout=
 st.markdown("# Plot XY map for some parameters！🎈")
 st.sidebar.markdown("# Main page 🎈 of Side Bar")
 
-
 def main():
 	st.title("File Upload Tutorial")
 	menu = ["Dataset","DocumentFiles","About"]
