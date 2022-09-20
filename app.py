@@ -25,23 +25,14 @@ def main():
 				 	"filesize":data_file.size}
 			st.sidebar.write(file_details)
 			df1 = read_SPI_file(data_file)
-			#df = pd.read_csv(data_file, skiprows=10, engine='c',
-			#		 sep=",", compression="zip", low_memory=False, 
-			#		 encoding='ISO-8859-1',encoding_errors='ignore')
-
-			#spi_items = ['Layout No.', 'Pin No.' , 'Pad No.' , 'Area[um2]' , 'Area[%]' , 'X shift' , 'Y shift', 
-			#	     'No solder' , 'Center X', 'Center Y']
-			#df1 = df.loc[:,spi_items]
-			#df1['Pin No.'] = df1['Pin No.'].astype('int')
-			#df1['Layout No.'] = df1['Layout No.'].astype('int32')
-			#df1.sort_values(['Layout No.', 'Pin No.'], inplace = True )
 
 			with tab1:
+				panel_id = data_file.name
 				fitem = 'Pin No.'
-    				xysize=[600,600]
-    				figA = plotSPI(df1, panel_id , spi_check[1], fitem, 3, [50, 150], xysize)
-    				figx = plotSPI(df1, panel_id , spi_check[2], fitem, 3, [-25, 25], xysize)
-    				figy = plotSPI(df1, panel_id , spi_check[3], fitem, 3, [-25, 25], xysize)
+				xysize=[600,600]
+				figA = plotSPI(df1, panel_id , spi_check[1], fitem, 3, [50, 150], xysize)
+				figx = plotSPI(df1, panel_id , spi_check[2], fitem, 3, [-25, 25], xysize)
+				figy = plotSPI(df1, panel_id , spi_check[3], fitem, 3, [-25, 25], xysize)
 			
 			
 			# To View Uploaded Image
