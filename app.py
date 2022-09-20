@@ -12,10 +12,10 @@ st.sidebar.markdown("# Main page 🎈 of Side Bar")
 def main():
 	#st.title("File Upload Tutorial")
 	st.title("# Plot XY Map for Some Parameter！")
-	menu = ["Dataset","DocumentFiles","About"]
+	menu = ["SPI","DB","AOI"]
 	choice = st.sidebar.selectbox("Menu",menu)
 
-	if choice == "Dataset":
+	if choice == "SPI":
 		st.subheader("Dataset")
 		data_file = st.file_uploader(r"Upload *.csv or *.csv.zip", type=["csv","zip"])
 		#
@@ -40,6 +40,7 @@ def main():
 
 			# To View Uploaded Image
 			with tab2:
+				st.write(df1.describe())
 				st.write(df1)				
 
 	elif choice == "DocumentFiles":
