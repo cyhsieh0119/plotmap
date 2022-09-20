@@ -21,8 +21,7 @@ def main():
 		with tcol1:
 			data_file = st.file_uploader(r"Upload *.csv or *.csv.zip", type=["zip"])
 		with tcol2:
-			file_details = {"filename":data_file.name, "filetype":data_file.type,
-				 	"filesize":data_file.size}
+			file_details = {"filename":data_file.name, "filetype":data_file.type, "filesize":data_file.size}
 			st.sidebar.write(file_details)
 		#
 		tab1, tab2 = st.tabs(["XY Map", "Histogram"])
