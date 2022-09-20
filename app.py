@@ -13,7 +13,7 @@ def main():
 	#st.title("File Upload Tutorial")
 	st.title("# Plot XY Map for Some Parameter！")
 	menu = ["SPI","DB","AOI"]
-	choice = st.sidebar.selectbox("Menu",menu)
+	choice = st.sidebar.selectbox("Menu(Only SPI is OK!)",menu)
 
 	if choice == "SPI":
 		st.subheader("Please use *.csv.zip as the input dataset file !")
