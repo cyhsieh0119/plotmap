@@ -30,7 +30,7 @@ def main():
 			with tab1:
 				panel_id = data_file.name
 				fitem = 'Pin No.'
-				xysize=[400,400]
+				xysize=[450,450]
 				figA = plotSPI(df1, panel_id , spi_check[1], fitem, 3, [50, 150], xysize)
 				figx = plotSPI(df1, panel_id , spi_check[2], fitem, 3, [-25, 25], xysize)
 				figy = plotSPI(df1, panel_id , spi_check[3], fitem, 3, [-25, 25], xysize)
@@ -42,19 +42,19 @@ def main():
 				with col3:
 					st.plotly_chart(figy, use_container_width=True)
 				
-				st.plotly_chart(figA, use_container_width=False)
-				st.plotly_chart(figx, use_container_width=False)
-				st.plotly_chart(figy, use_container_width=False)
+				#st.plotly_chart(figA, use_container_width=False)
+				#st.plotly_chart(figx, use_container_width=False)
+				#st.plotly_chart(figy, use_container_width=False)
 
 			# To View Uploaded Image
 			with tab2:
 				hcol1, hcol2, hcol3 = st.columns(3)
 				with hcol1:
-					st.plotly_chart(px.histogram(df1, x=spi_check[1], title=panel_id, log_y=True) )
+					st.plotly_chart(px.histogram(df1, x=spi_check[1], title=panel_id, log_y=True) ,use_container_width=True)
 				with hcol2:
-					st.plotly_chart(px.histogram(df1, x=spi_check[2], title=panel_id, log_y=True) )
+					st.plotly_chart(px.histogram(df1, x=spi_check[2], title=panel_id, log_y=True) ,use_container_width=True)
 				with hcol3:
-					st.plotly_chart(px.histogram(df1, x=spi_check[3], title=panel_id, log_y=True) )
+					st.plotly_chart(px.histogram(df1, x=spi_check[3], title=panel_id, log_y=True) ,use_container_width=True)
 				#st.plotly_chart(px.histogram(df1, x=spi_check[1], title=panel_id, log_y=True) )
 				#st.plotly_chart(px.histogram(df1, x=spi_check[2], title=panel_id, log_y=True) )
 				#st.plotly_chart(px.histogram(df1, x=spi_check[3], title=panel_id, log_y=True) )
