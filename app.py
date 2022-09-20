@@ -6,7 +6,7 @@ import numpy as np
 from utils import read_SPI_file, plotSPI
 
 st.set_page_config(page_title = "Plot Map!" ,page_icon="random" ,layout="wide")
-st.sidebar.markdown("# Main page 🎈 of Side Bar")
+st.sidebar.markdown("# Please Select the Items:")
 #st.title("# Plot XY Map for Some Parameter！")
 
 def main():
