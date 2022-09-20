@@ -1,5 +1,6 @@
 import pandas as pd
 import plotly.express as px
+import numpy as np
 
 def read_SPI_file(data_file):
     df = pd.read_csv(data_file, skiprows=10, engine='c', sep=",", compression="zip", low_memory=False, encoding='ISO-8859-1',encoding_errors='ignore')
