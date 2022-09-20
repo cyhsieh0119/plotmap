@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import numpy as np
-from utils import read_SPI_file, plotSPI
+from utils import read_SPI_file, plotSPI, read_db_zip,  plotDB
 
 st.set_page_config(page_title = "Plot Map!" ,page_icon="random" ,layout="wide", initial_sidebar_state="collapsed")
 st.sidebar.markdown("# Please Select the Items:")
