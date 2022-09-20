@@ -81,6 +81,8 @@ def main():
 					st.write(df1)				
 
 	elif choice == "DB":
+		#if data_file is not None:
+		del data_file if data_file is not None
 		st.subheader("DB is under constructed! Coming Soon...")
 		#st.subheader("Please use *.csv.zip as the input dataset file !")
 		db_col1, db_col2, db_col3 = st.columns([3,1,5])
