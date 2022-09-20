@@ -19,7 +19,7 @@ def main():
 		st.subheader("Please use *.csv.zip as the input dataset file !")
 		data_file = st.file_uploader(r"Upload *.csv or *.csv.zip", type=["zip"])
 		#
-		tab1, tab2 = st.tabs(["Graph", "Histogram"])
+		tab1, tab2 = st.tabs(["XY Map", "Histogram"])
 		if data_file is not None:
 			file_details = {"filename":data_file.name, "filetype":data_file.type,
 				 	"filesize":data_file.size}
@@ -34,14 +34,14 @@ def main():
 				figA = plotSPI(df1, panel_id , spi_check[1], fitem, 3, [50, 150], xysize)
 				figx = plotSPI(df1, panel_id , spi_check[2], fitem, 3, [-25, 25], xysize)
 				figy = plotSPI(df1, panel_id , spi_check[3], fitem, 3, [-25, 25], xysize)
-				#col1, col2, col3 = st.columns(3)
-				#with col1:
-				#	st.plotly_chart(figA, use_container_width=True)
-				#with col2:
-				#	st.plotly_chart(figx, use_container_width=True)
-				#with col3:
-				#	st.plotly_chart(figy, use_container_width=True)
-				#
+				col1, col2, col3 = st.columns(3)
+				with col1:
+					st.plotly_chart(figA, use_container_width=True)
+				with col2:
+					st.plotly_chart(figx, use_container_width=True)
+				with col3:
+					st.plotly_chart(figy, use_container_width=True)
+				
 				st.plotly_chart(figA, use_container_width=False)
 				st.plotly_chart(figx, use_container_width=False)
 				st.plotly_chart(figy, use_container_width=False)
