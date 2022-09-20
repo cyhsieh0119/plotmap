@@ -25,10 +25,10 @@ def main():
 				 	"filesize":data_file.size}
 			st.sidebar.write(file_details)
 			df1 = read_SPI_file(data_file)
+			spi_check=['Area[um2]', 'Area[%]',  'X shift', 'Y shift' ]
 
 			with tab1:
 				panel_id = data_file.name
-				spi_check=['Area[um2]', 'Area[%]',  'X shift', 'Y shift' ]
 				fitem = 'Pin No.'
 				xysize=[600,600]
 				figA = plotSPI(df1, panel_id , spi_check[1], fitem, 3, [50, 150], xysize)
@@ -40,7 +40,7 @@ def main():
 
 			# To View Uploaded Image
 			with tab2:
-				st.write(df1.describe())
+				st.write(df1[spi_check].describe())
 				st.write(df1)				
 
 	elif choice == "DocumentFiles":
