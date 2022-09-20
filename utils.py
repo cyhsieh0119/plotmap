@@ -13,6 +13,17 @@ def read_SPI_file(data_file):
     df1.reset_index(drop=True)
     return df1
 
+def ellipse_arc(x_center=0, y_center=0, a=1, b =1, start_angle=0, end_angle=2*np.pi, N=100, closed= False):
+    t = np.linspace(start_angle, end_angle, N)
+    x = x_center + a*np.cos(t)
+    y = y_center + b*np.sin(t)
+    path = f'M {x[0]}, {y[0]}'
+    for k in range(1, len(t)):
+        path += f'L{x[k]}, {y[k]}'
+    if closed:
+        path += ' Z'
+    return path
+
 def plotSPI(df,  panel_id, Citem, fitem, no , rang, xysize):
     # 定義顏色空間的相關色彩
     color1 = [ "rgb(255, 0, 0)"    ,   "rgb(255, 255, 96)",   "rgb(255, 255, 160)",
