@@ -16,7 +16,7 @@ def main():
 	choice = st.sidebar.selectbox("Menu",menu)
 
 	if choice == "SPI":
-		st.subheader("Dataset")
+		st.subheader("Please use *.csv.zup as the input dataset file !")
 		data_file = st.file_uploader(r"Upload *.csv or *.csv.zip", type=["csv","zip"])
 		#
 		tab1, tab2 = st.tabs(["Graph", "Detail Data"])
