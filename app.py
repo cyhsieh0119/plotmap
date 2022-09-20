@@ -5,13 +5,13 @@ import plotly.express as px
 import numpy as np
 from utils import read_SPI_file, plotSPI
 
-st.set_page_config(page_title="Plot Map Exercise !" ,page_icon="random" ,layout="wide")
-
-st.markdown("# Plot XY map for some parameters！🎈")
+st.set_page_config(page_title = "Plot Map!" ,page_icon="random" ,layout="wide")
 st.sidebar.markdown("# Main page 🎈 of Side Bar")
+#st.title("# Plot XY Map for Some Parameter！")
 
 def main():
 	#st.title("File Upload Tutorial")
+	st.title("# Plot XY Map for Some Parameter！")
 	menu = ["Dataset","DocumentFiles","About"]
 	choice = st.sidebar.selectbox("Menu",menu)
 
