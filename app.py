@@ -34,9 +34,14 @@ def main():
 				figA = plotSPI(df1, panel_id , spi_check[1], fitem, 3, [50, 150], xysize)
 				figx = plotSPI(df1, panel_id , spi_check[2], fitem, 3, [-25, 25], xysize)
 				figy = plotSPI(df1, panel_id , spi_check[3], fitem, 3, [-25, 25], xysize)
-				st.plotly_chart(figA, use_container_width=False)
-				st.plotly_chart(figx, use_container_width=False)
-				st.plotly_chart(figy, use_container_width=False)	
+				col1, col2, col3 = st.columns(3)
+				with col1:
+					st.plotly_chart(figA, use_container_width=False)
+				with col2:
+					st.plotly_chart(figx, use_container_width=False)
+				with col3:
+					st.plotly_chart(figy, use_container_width=False)
+					
 
 			# To View Uploaded Image
 			with tab2:
