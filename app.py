@@ -22,7 +22,7 @@ def main():
 		if data_file is not None:
 			file_details = {"filename":data_file.name, "filetype":data_file.type,
 				 	"filesize":data_file.size}
-			df1 = read_SPI_file（data_file)
+			df1 = read_SPI_file(data_file)
 			#df = pd.read_csv(data_file, skiprows=10, engine='c',
 			#		 sep=",", compression="zip", low_memory=False, 
 			#		 encoding='ISO-8859-1',encoding_errors='ignore')
