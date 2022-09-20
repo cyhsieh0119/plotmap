@@ -2,7 +2,7 @@ from PIL import Image
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from zipfile import ZipFile
+#from zipfile import ZipFile
 import numpy as np
 from utils import read_SPI_file, plotSPI, read_db_zip,  plotDB
 
