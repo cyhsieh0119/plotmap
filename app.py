@@ -11,10 +11,9 @@ st.markdown("# Plot XY map for some parameters！🎈")
 st.sidebar.markdown("# Main page 🎈 of Side Bar")
 
 def main():
-	st.title("File Upload Tutorial")
+	#st.title("File Upload Tutorial")
 	menu = ["Dataset","DocumentFiles","About"]
 	choice = st.sidebar.selectbox("Menu",menu)
-	#tab1, tab2, tab3 = st.tabs(["SPI", "DB", "AOI"])
 
 	if choice == "Dataset":
 		st.subheader("Dataset")
@@ -35,8 +34,10 @@ def main():
 				figA = plotSPI(df1, panel_id , spi_check[1], fitem, 3, [50, 150], xysize)
 				figx = plotSPI(df1, panel_id , spi_check[2], fitem, 3, [-25, 25], xysize)
 				figy = plotSPI(df1, panel_id , spi_check[3], fitem, 3, [-25, 25], xysize)
-			
-			
+				st.plotly_chart(figA, use_container_width=True)
+				st.plotly_chart(figX, use_container_width=True)
+				st.plotly_chart(figY, use_container_width=True)	
+
 			# To View Uploaded Image
 			with tab2:
 				st.write(df1)				
