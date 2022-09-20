@@ -25,7 +25,8 @@ def main():
 		if data_file is not None:
 			with tcol2:
 				file_details = {"filename":data_file.name, "filetype":data_file.type, "filesize":data_file.size}
-				st.sidebar.write(file_details)
+				st.write(file_details)
+				#st.sidebar.write(file_details)
 			#
 			df1 = read_SPI_file(data_file)
 			spi_check=['Area[um2]', 'Area[%]',  'X shift', 'Y shift' ]
