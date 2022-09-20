@@ -2,6 +2,7 @@ import pandas as pd
 import plotly.express as px
 import numpy as np
 import streamlit as st
+from zipfile import ZipFile
 
 @st.cache
 def read_db_zip(zip_name):
