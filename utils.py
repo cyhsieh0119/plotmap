@@ -40,7 +40,7 @@ def read_SPI_file(data_file):
     del df
     return df1
 
-@st.cache
+#@st.cache
 def read_COB_file(filename):
     #
     columns=['Time', 'Onload Wafer ID', 'Column', 'Row', 'Panel_ID', 'Cluster' , 'OutputX', 'OutputY', 'OutputID',\
