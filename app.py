@@ -48,9 +48,9 @@ def main():
 
 			# To View Uploaded Image
 			with tab2:
-				st.plotly_chart(px.histogram(df1, x=spi_check[1],title=panel_id))
-				st.plotly_chart(px.histogram(df1, x=spi_check[2],title=panel_id))
-				st.plotly_chart(px.histogram(df1, x=spi_check[3],title=panel_id))
+				st.plotly_chart(px.histogram(df1, x=spi_check[1], title=panel_id, log_y=True) )
+				st.plotly_chart(px.histogram(df1, x=spi_check[2], title=panel_id, log_y=True) )
+				st.plotly_chart(px.histogram(df1, x=spi_check[3], title=panel_id, log_y=True) )
 				#st.write(df1[spi_check].describe())
 				with st.expander("See detail datas!"):
 					st.write(df1)				
