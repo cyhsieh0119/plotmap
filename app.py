@@ -78,7 +78,6 @@ def main():
 					st.write(df1)				
 
 	elif choice == "DB":
-
 		st.subheader("DB is under constructed! Coming Soon...")
 		with st.form("my-form", clear_on_submit=True):
 			db_col1, db_col2, db_col3 = st.columns([3,1,5])
@@ -96,12 +95,15 @@ def main():
 
 		if submitted:
 			with st.expander("See detail datas!"):
+				    if df1.shape[0] == 40994:
+        				xysize=[600, 600]
+					panel_id=df1['Panel_ID'].unique()[0]
+        				figx = plotDB(ndf3, panel_id, 'X', None, None, xysize)
+        				figy = plotDB(ndf3, panel_id, 'Y', None, None, xysize)
+					st.plotly_chart(figx, use_container_width=True)
+					st.plotly_chart(figy, use_container_width=True)
 				st.write(df1)
 		
-		
-
-		
-			
 	elif choice == "AOI":
 		st.subheader("AOI is under constructed! Coming Soon...")
 
