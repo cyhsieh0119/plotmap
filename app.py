@@ -79,6 +79,7 @@ def main():
 
 	elif choice == "DB":
 		st.subheader("DB is under constructed! Coming Soon...")
+		df1 = None
 		with st.form("my-form", clear_on_submit=True):
 			db_col1, db_col2, db_col3 = st.columns([3,1,5])
 			with db_col1:
