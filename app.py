@@ -96,7 +96,8 @@ def main():
 				with st.expander("See detail datas!"):
 					st.write(df1)
 		if submitted:
-			st.write('test is ok!')
+			with st.expander("See detail datas!"):
+				st.write(df1)
 		
 		
 
