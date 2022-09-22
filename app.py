@@ -95,7 +95,7 @@ def main():
 				df1 = read_db_zip(db_zip_file)
 				with st.expander("See detail datas!"):
 					st.write(df1)
-		if df1 is not None:
+		if submitted:
 			st.write('test is ok!')
 		
 		
