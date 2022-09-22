@@ -63,9 +63,6 @@ def main():
 					figy = plotSPI(df1, panel_id , spi_check[3], fitem, 3, [minY, maxY], xysize)
 					st.plotly_chart(figy, use_container_width=True)
 				
-				#st.plotly_chart(figA, use_container_width=False)
-				#st.plotly_chart(figx, use_container_width=False)
-				#st.plotly_chart(figy, use_container_width=False)
 
 			# To View Uploaded Image
 			with tab2:
@@ -76,17 +73,12 @@ def main():
 					st.plotly_chart(px.histogram(df1, x=spi_check[2], title=panel_id, log_y=True) ,use_container_width=True)
 				with hcol3:
 					st.plotly_chart(px.histogram(df1, x=spi_check[3], title=panel_id, log_y=True) ,use_container_width=True)
-				#st.plotly_chart(px.histogram(df1, x=spi_check[1], title=panel_id, log_y=True) )
-				#st.plotly_chart(px.histogram(df1, x=spi_check[2], title=panel_id, log_y=True) )
-				#st.plotly_chart(px.histogram(df1, x=spi_check[3], title=panel_id, log_y=True) )
-				#st.write(df1[spi_check].describe())
+				
 				with st.expander("See detail datas!"):
 					st.write(df1)				
 
 	elif choice == "DB":
-		#if data_file is not None:
-		if db_zip_file is not None:
-			del db_zip_file
+
 		st.subheader("DB is under constructed! Coming Soon...")
 		with st.form("my-form", clear_on_submit=True):
 			db_col1, db_col2, db_col3 = st.columns([3,1,5])
@@ -102,7 +94,10 @@ def main():
 					#st.sidebar.write(file_details)
 				df1 = read_db_zip(db_zip_file)
 				with st.expander("See detail datas!"):
-					st.write(df1)			
+					st.write(df1)
+		if df1 is not None:
+			st.write('test is ok!')
+		
 		
 
 		
