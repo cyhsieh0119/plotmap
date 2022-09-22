@@ -93,8 +93,7 @@ def main():
 					st.write(file_details)
 					#st.sidebar.write(file_details)
 				df1 = read_db_zip(db_zip_file)
-				with st.expander("See detail datas!"):
-					st.write(df1)
+
 		if submitted:
 			with st.expander("See detail datas!"):
 				st.write(df1)
