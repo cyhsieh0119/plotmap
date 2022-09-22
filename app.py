@@ -101,17 +101,10 @@ def main():
 					st.write(file_details)
 					#st.sidebar.write(file_details)
 				df1 = read_db_zip(db_zip_file)
+				with st.expander("See detail datas!"):
+					st.write(df1)			
 		
-		#st.subheader("Please use *.csv.zip as the input dataset file !")
-		#db_col1, db_col2, db_col3 = st.columns([3,1,5])
-		#with db_col1:
-		#	db_zip_file = st.file_uploader(r"Upload *.csv.zip", type=["zip"])
-		#if db_zip_file is not None:
-		#	with db_col3:
-		#		file_details = {"filename":db_zip_file.name, "filetype":db_zip_file.type, "filesize":db_zip_file.size}
-		#		st.write(file_details)
-				#st.sidebar.write(file_details)
-			#
+
 		
 			
 	elif choice == "AOI":
