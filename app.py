@@ -93,7 +93,7 @@ def main():
 						st.write(file_details)
 					df1 = read_db_zip(db_zip_file)
 
-		if submitted:
+		if submitted and df1 is not None:
 			if df1.shape[0] == 40994:
 				xysize=[500, 500]
 				panel_id=df1['Panel_ID'].unique()[0]
