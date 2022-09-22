@@ -84,14 +84,15 @@ def main():
 			with db_col1:
 				db_zip_file = st.file_uploader(r"Upload *.csv.zip", type=["zip"])
 				
-			submitted = st.form_submit_button("UPLOAD!")
-			if submitted and db_zip_file is not None:
-				st.write("UPLOADED!")
-				with db_col3:
-					file_details = {"filename":db_zip_file.name, "filetype":db_zip_file.type, "filesize":db_zip_file.size}
-					st.write(file_details)
+			if db_zip_file is not None: 
+				submitted = st.form_submit_button("UPLOAD!")
+				if submitted :
+					st.write("UPLOADED!")
+					with db_col3:
+						file_details = {"filename":db_zip_file.name, "filetype":db_zip_file.type, "filesize":db_zip_file.size}
+						st.write(file_details)
 					#st.sidebar.write(file_details)
-				df1 = read_db_zip(db_zip_file)
+					df1 = read_db_zip(db_zip_file)
 
 		if submitted:
 			if df1.shape[0] == 40994:
