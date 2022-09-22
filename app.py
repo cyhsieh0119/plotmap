@@ -94,14 +94,19 @@ def main():
 				df1 = read_db_zip(db_zip_file)
 
 		if submitted:
-			with st.expander("See detail datas!"):
-				if df1.shape[0] == 40994:
-					xysize=[600, 600]
-					panel_id=df1['Panel_ID'].unique()[0]
-					figx = plotDB(df1, panel_id, 'X', None, None, xysize)
-					figy = plotDB(df1, panel_id, 'Y', None, None, xysize)
+			if df1.shape[0] == 40994:
+				xysize=[500, 500]
+				panel_id=df1['Panel_ID'].unique()[0]
+				figx = plotDB(df1, panel_id, 'X', None, None, xysize)
+				figy = plotDB(df1, panel_id, 'Y', None, None, xysize)
+				db_col1a, db_col2a, db_col3a = st.columns([5,1,5])
+				with db_col1a:					
 					st.plotly_chart(figx, use_container_width=True)
+				with db_col3a:
 					st.plotly_chart(figy, use_container_width=True)
+			else: 
+				st.error('There is an error of input file. \n Please check the sample no. of raw datas!', icon="🚨")
+			with st.expander("See detail datas!"):
 				st.write(df1)
 		
 	elif choice == "AOI":
