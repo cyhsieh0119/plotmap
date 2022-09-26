@@ -3,3 +3,5 @@ numpy
 scipy
 pandas
 matplotlib
+streamlit-aggrid
+streamlit-pandas-profiling
