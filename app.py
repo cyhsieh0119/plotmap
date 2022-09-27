@@ -1,8 +1,6 @@
-from PIL import Image
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-#from zipfile import ZipFile
 import numpy as np
 from utils import read_SPI_file, plotSPI, read_db_zip,  plotDB
 
@@ -17,8 +15,8 @@ def main():
 		#
 		df_spi = None
 		with st.form("spi-form", clear_on_submit=True):
-			data_file = st.file_uploader(r"Upload *.csv.zip", type=["zip"])
-			submitted = st.form_submit_button("UPLOAD!")
+			data_file = st.file_uploader(r"SPI Upload *.csv.zip", type=["zip"])
+			submitted = st.form_submit_button("SPI UPLOAD!")
 			if submitted and data_file is not None:
 				st.write("UPLOADED!")
 				spi_file_details = rf"filename:{data_file.name},\n filetype:{data_file.type},\n filesize:{data_file.size}"
@@ -27,8 +25,8 @@ def main():
 	with mcol3:
 		df_db = None
 		with st.form("db-form", clear_on_submit=True):
-			db_zip_file = st.file_uploader(r"Upload *.csv.zip", type=["zip"])
-			submitted_db = st.form_submit_button("UPLOAD!")
+			db_zip_file = st.file_uploader(r"DB Upload *.csv.zip", type=["zip"])
+			submitted_db = st.form_submit_button("DB UPLOAD!")
 			if submitted_db and db_zip_file is not None:
 				st.write("UPLOADED!")
 				db_file_details = rf"filename:{db_zip_file.name},\n filetype:{db_zip_file.type},\n filesize:{db_zip_file.size}"
@@ -68,10 +66,6 @@ def main():
 			else: 
 				st.error('There is an error of input file. \n Please check the sample no. of raw datas!', icon="🚨")
 		
-	#elif choice == "AOI":
-	#	st.subheader("AOI is under constructed! Coming Soon...")
-		#
-
 if __name__ == '__main__':
 	#initD()
 	main()
