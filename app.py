@@ -27,7 +27,7 @@ def main():
 			if submitted and data_file is not None:
 				st.write("UPLOADED!")
 		#			with tcol3:
-				spi_file_details = {"filename":data_file.name, "filetype":data_file.type, "filesize":data_file.size}
+				spi_file_details = rf"filename":{data_file.name},\n filetype:{data_file.type},\n filesize:{data_file.size}"
 				#st.write(file_details)
 				st.info(spi_file_details, icon="i")
 				df_spi = read_SPI_file(data_file)
@@ -42,7 +42,7 @@ def main():
 			if submitted_db and db_zip_file is not None:
 				st.write("UPLOADED!")
 			#		with db_col3:
-				db_file_details = {"filename":db_zip_file.name, "filetype":db_zip_file.type, "filesize":db_zip_file.size}
+				db_file_details = rf"filename:{db_zip_file.name},\n filetype:{db_zip_file.type},\n filesize:{db_zip_file.size}"
 				st.info(db_file_details, icon="i")
 				#st.write(file_details)
 				df_db = read_db_zip(db_zip_file)
