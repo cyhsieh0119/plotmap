@@ -24,7 +24,8 @@ def main():
 				if submitted and data_file is not None:
 					st.write("UPLOADED!")
 					spi_file_details = rf"filename:{data_file.name},\n filetype:{data_file.type},\n filesize:{data_file.size}"
-					st.info(spi_file_details, icon="i")
+					st.success(spi_file_details, icon="✅")
+					#st.info(spi_file_details, icon="i")
 					df_spi = read_SPI_file(data_file)
 		with mcol3:
 			df_db = None
@@ -34,7 +35,8 @@ def main():
 				if submitted_db and db_zip_file is not None:
 					st.write("UPLOADED!")
 					db_file_details = rf"filename:{db_zip_file.name},\n filetype:{db_zip_file.type},\n filesize:{db_zip_file.size}"
-					st.info(db_file_details, icon="i")
+					st.success(db_file_details, icon="✅")
+					#st.info(db_file_details, icon="i")
 					df_db = read_db_zip(db_zip_file)
 #
 		st.subheader('XY MAP')
