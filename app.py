@@ -52,7 +52,7 @@ def main():
 				spi_check=['Area[um2]', 'Area[%]',  'X shift', 'Y shift' ]
 				panel_id = data_file.name
 				fitem = 'Pin No.'
-				xysize=[450,450]			
+				xysize=[500,500]			
 				#valueX = st.slider('Select a range of X shift',-40, 40, (-25, 25))
 				#minX, maxX = valueX[0], valueX[1]
 				minX, maxX = -25, 25
@@ -63,7 +63,7 @@ def main():
 				minY, maxY = -25, 25
 				figy = plotSPI(df_spi, panel_id , spi_check[3], fitem, 3, [minY, maxY], xysize)
 				st.plotly_chart(figy, use_container_width=True)
-				valueA = st.slider('Select a range of Areas',50, 150, (50, 150))
+				#valueA = st.slider('Select a range of Areas',50, 150, (50, 150))
 				minA, maxA = 50, 150
 				#minA, maxA = valueA[0], valueA[1]
 				figA = plotSPI(df_spi, panel_id , spi_check[1], fitem, 3, [minA, maxA], xysize)
