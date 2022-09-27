@@ -27,7 +27,7 @@ def main():
 			if submitted and data_file is not None:
 				st.write("UPLOADED!")
 		#			with tcol3:
-				spi_file_details = rf"filename":{data_file.name},\n filetype:{data_file.type},\n filesize:{data_file.size}"
+				spi_file_details = rf"filename:{data_file.name},\n filetype:{data_file.type},\n filesize:{data_file.size}"
 				#st.write(file_details)
 				st.info(spi_file_details, icon="i")
 				df_spi = read_SPI_file(data_file)
