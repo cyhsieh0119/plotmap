@@ -44,9 +44,10 @@ def main():
 					df_db = read_db_zip(db_zip_file)
 			st.write("UPLOADED!")
 					#
-		st.subheader('XY MAP')
+		#st.subheader('XY MAP')
 		gcol1, gcol2, gcol3 = st.columns([5,0.1,5])
 		with gcol1:
+			st.subheader('SPI MAP')
 			if submitted and df_spi is not None:		
 				spi_check=['Area[um2]', 'Area[%]',  'X shift', 'Y shift' ]
 				panel_id = data_file.name
@@ -65,10 +66,11 @@ def main():
 				valueA = st.slider('Select a range of Areas',50, 150, (50, 150))
 				minA, maxA = 50, 150
 				#minA, maxA = valueA[0], valueA[1]
-				#figA = plotSPI(df_spi, panel_id , spi_check[1], fitem, 3, [minA, maxA], xysize)
+				figA = plotSPI(df_spi, panel_id , spi_check[1], fitem, 3, [minA, maxA], xysize)
 				st.plotly_chart(figA, use_container_width=True)				
 	#
 		with gcol3:
+			st.subheader('DB MAP')
 			if submitted and df_db is not None:
 				if df_db.shape[0] == 40994:
 					xysize=[500, 500]
