@@ -42,7 +42,7 @@ def main():
 					db_file_details = rf"filename:{db_zip_file.name},\n filetype:{db_zip_file.type},\n filesize:{db_zip_file.size}"
 					#st.success(db_file_details, icon="✅")
 					df_db = read_db_zip(db_zip_file)
-			st.write("UPLOADED!")
+			#st.write("UPLOADED!")
 					#
 		#st.subheader('XY MAP')
 		gcol1, gcol2, gcol3 = st.columns([5,0.1,5])
