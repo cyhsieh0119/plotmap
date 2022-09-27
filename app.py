@@ -29,7 +29,7 @@ def main():
 		#			with tcol3:
 				spi_file_details = {"filename":data_file.name, "filetype":data_file.type, "filesize":data_file.size}
 				#st.write(file_details)
-				st.info(spi_file_details, icon="SPI")
+				st.info(spi_file_details, icon="i")
 				df_spi = read_SPI_file(data_file)
 	with mcol3:
 		df_db = None
@@ -43,7 +43,7 @@ def main():
 				st.write("UPLOADED!")
 			#		with db_col3:
 				db_file_details = {"filename":db_zip_file.name, "filetype":db_zip_file.type, "filesize":db_zip_file.size}
-				st.info(db_file_details, icon="DB")
+				st.info(db_file_details, icon="i")
 				#st.write(file_details)
 				df_db = read_db_zip(db_zip_file)
 #
