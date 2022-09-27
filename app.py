@@ -25,7 +25,7 @@ def main():
 				db_zip_file = st.file_uploader(r"DB Upload *.csv.zip", type=["zip"])
 			#
 			submitted = st.form_submit_button("UPLOAD!")
-			if submitted and db_zip_file is not None:
+			if submitted is not None:
 				st.write("UPLOADED!")
 				if data_file is not None:	
 					spi_file_details = rf"filename:{data_file.name},\n filetype:{data_file.type},\n filesize:{data_file.size}"
