@@ -31,7 +31,7 @@ def main():
 					spi_file_details = rf"filename:{data_file.name},\n filetype:{data_file.type},\n filesize:{data_file.size}"
 					#st.success(spi_file_details, icon="✅")
 					df_spi = read_SPI_file(data_file)
-				if db_zip_file is not Non
+				if db_zip_file is not None:
 					db_file_details = rf"filename:{db_zip_file.name},\n filetype:{db_zip_file.type},\n filesize:{db_zip_file.size}"
 					#st.success(db_file_details, icon="✅")
 					df_db = read_db_zip(db_zip_file)
