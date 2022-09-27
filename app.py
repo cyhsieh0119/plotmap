@@ -14,8 +14,9 @@ def main():
 	choice = st.sidebar.selectbox("Menu(Only SPI/DB is OK!)",menu)
 	
 	if choice == "SPI/DB":	
-		mcol1, mcol2, mcol3 = st.columns([5,0.1,5])
+		#mcol1, mcol2, mcol3 = st.columns([5,0.1,5])
 		with st.form("spi-form", clear_on_submit=True):
+			mcol1, mcol2, mcol3 = st.columns([5,0.1,5])
 			#
 			#with mcol1:
 			#	df_spi = None
